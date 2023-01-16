@@ -8,7 +8,9 @@ import datetime
 def main():
     def formating_token(s: str):
         s = s.replace("https://oauth.vk.com/blank.html#access_token=", "")
-        s = s.replace("&expires_in=86400&user_id=<<USER ID>>", "")
+        
+        # Put your user id
+        s = s.replace("&expires_in=86400&user_id=<<YOUR USER ID>>", "")
         s = s.replace(" ", "")
         return s
 
@@ -42,6 +44,8 @@ def main():
         return array_user_friends
 
     version_vk_api = 5.131
+    
+    # Put your app id
     app_id = <<YOUR APP ID>>
     access_token = get_token(app_id, version_vk_api)
     domain = 'https://api.vk.com/method/'
